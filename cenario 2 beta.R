@@ -192,69 +192,75 @@ sd(as.numeric(acuracia_xgboost))
 
 ## Boxplot AUC, KS e Acuracia
 
-par(mfrow=c(3,3))
+par(mfrow=c(1,3))
 
 boxplot_auc_regressao <- boxplot(as.numeric(auc_regressao),
-        main = "Cenário 2: AUC Regressão",
-        xlab = "AUC Regressão Logística", ylim = c(0.7,1),
+        main = "Cenário 2: AUC Regressão para n = 1000",
+        xlab = "AUC Regressão Logística", ylim = c(0.4,1),
         col = "lightblue",pch=19,
         horizontal = T,notch=F)
 
-boxplot_ks_regressao <- boxplot(as.numeric(test.ks_regressao),
-                                main = "Cenário 2: KS Regressão",
-                                xlab = "KS Regressão Logística",
-                                ylim = c(0.3,1),
-                                col = "lightblue",pch=19,
-                                horizontal = T,notch=F)
-
-boxplot_ac_regressao <- boxplot(as.numeric(acuracia_logistica),
-                                main = "Cenário 2: Acurácia Regressão",
-                                xlab = "Acurácia Regressão Logística",
-                                ylim = c(0.6,1),
-                                col = "lightblue",pch=19,
-                                horizontal = T,notch=F)
 
 boxplot_auc_floresta <- boxplot(as.numeric(auc_floresta),
-                                 main = "Cenário 2: AUC Floresta",
+                                 main = "Cenário 2: AUC Floresta para n = 1000",
                                  xlab = "AUC Floresta Aleatória",
-                                 ylim = c(0.7,1),
+                                 ylim = c(0.4,1),
                                  col = "lightpink",pch=19,
                                  horizontal = T,notch=F)
 
-boxplot_ks_floresta <- boxplot(as.numeric(test.ks_floresta),
-                               main = "Cenário 2: KS Floresta",
-                               xlab = "KS Floresta Aleatória",
-                               ylim = c(0.3,1),
-                               col = "lightpink",pch=19,
-                               horizontal = T,notch=F)
-
-boxplot_ac_floresta <- boxplot(as.numeric(acuracia_floresta),
-                               main = "Cenário 2: Acurácia Floresta",
-                               xlab = "Acurácia Floresta Aleatória",
-                               ylim = c(0.6,1),
-                               col = "lightpink",pch=19,
-                               horizontal = T,notch=F)
 
 boxplot_auc_xgboost <- boxplot(as.numeric(auc_xgboost),
-                                main = "Cenário 2: AUC XGBoost",
+                                main = "Cenário 2: AUC XGBoost para n = 1000",
                                 xlab = "AUC XGBoost",
-                                ylim = c(0.7,1),
+                                ylim = c(0.4,1),
                                 col = "lightgreen",pch=19,
                                 horizontal = T,notch=F)
 
-boxplot_ks_xgboost <- boxplot(as.numeric(test.ks_xgboost),
-                               main = "Cenário 2: KS XGBoost",
-                               xlab = "KS XGBoost",
-                               ylim = c(0.3,1),
-                               col = "lightgreen",pch=19,
-                               horizontal = T,notch=F)
+par(mfrow=c(1,3))
 
-boxplot_ac_xgboost <- boxplot(as.numeric(acuracia_xgboost),
-                               main = "Cenário 2: Acurácia XGBoost",
-                               xlab = "Acurácia XGBoost",
-                               ylim = c(0.6,1),
-                               col = "lightgreen",pch=19,
+boxplot_ks_regressao <- boxplot(as.numeric(test.ks_regressao),
+                                main = "Cenário 2: KS Regressão para n = 1000",
+                                xlab = "KS Regressão Logística",
+                                ylim = c(0.2,1),
+                                col = "lightblue",pch=19,
+                                horizontal = T,notch=F)
+
+
+boxplot_ks_floresta <- boxplot(as.numeric(test.ks_floresta),
+                               main = "Cenário 2: KS Floresta para n = 1000",
+                               xlab = "KS Floresta Aleatória",
+                               ylim = c(0.2,1),
+                               col = "lightpink",pch=19,
                                horizontal = T,notch=F)
+boxplot_ks_xgboost <- boxplot(as.numeric(test.ks_xgboost),
+                              main = "Cenário 2: KS XGBoost para n = 1000",
+                              xlab = "KS XGBoost",
+                              ylim = c(0.2,1),
+                              col = "lightgreen",pch=19,
+                              horizontal = T,notch=F)
+
+par(mfrow=c(1,3))
+
+boxplot_ac_regressao <- boxplot(as.numeric(acuracia_logistica),
+                                main = "Cenário 2: Acurácia Regressão para n = 1000",
+                                xlab = "Acurácia Regressão Logística",
+                                ylim = c(0.35,1),
+                                col = "lightblue",pch=19,
+                                horizontal = T,notch=F)
+
+
+boxplot_ac_floresta <- boxplot(as.numeric(acuracia_floresta),
+                               main = "Cenário 2: Acurácia Floresta para n = 1000",
+                               xlab = "Acurácia Floresta Aleatória",
+                               ylim = c(0.35,1),
+                               col = "lightpink",pch=19,
+                               horizontal = T,notch=F)
+boxplot_ac_xgboost <- boxplot(as.numeric(acuracia_xgboost),
+                              main = "Cenário 2: Acurácia XGBoost para n = 1000",
+                              xlab = "Acurácia XGBoost",
+                              ylim = c(0.35,1),
+                              col = "lightgreen",pch=19,
+                              horizontal = T,notch=F)
 dev.off()
 
 
